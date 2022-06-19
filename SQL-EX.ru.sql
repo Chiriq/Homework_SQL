@@ -1,5 +1,5 @@
 1)Найдите номер модели, скорость и размер жесткого диска для всех ПК стоимостью менее 500 дол. Вывести: model, speed и hd.
-SELECT model, speed, hd
+Select model, speed, hd
 From PC
 Where price < 500
 
@@ -41,18 +41,18 @@ Where product.model = laptop.model AND laptop.hd >=10
 ===================================
 
 7)Найдите номера моделей и цены всех имеющихся в продаже продуктов (любого типа) производителя B (латинская буква).
-SELECT a.model, price 
-FROM (SELECT model, price 
-FROM PC 
+Select a.model, price 
+From (Select model, price 
+From PC 
 UNION
-SELECT model, price 
-FROM Laptop
+Select model, price 
+From Laptop
 UNION
-SELECT model, price 
-FROM Printer)
+Select model, price 
+From Printer)
  AS a JOIN 
  Product p ON a.model = p.model
-WHERE p.maker = 'B'
+Where p.maker = 'B'
 
 ===================================
 
